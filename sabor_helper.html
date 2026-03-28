@@ -1,0 +1,195 @@
+<link href="sabor_helper.css" />
+<html>
+    
+    <window
+      id="saborHelper"
+      class="helper-window"
+      placement="center"
+      onescape="self:hide()"
+    >
+<div class="logo-header"> </div>
+	
+  <!-- HEADER (BOTÕES) -->
+<div class="tabs" style="margin-top: 10px; margin-left: 20px;">
+
+<img src="/modules/sabor_helper/images/healing_button.png"
+     *image-clip="self.healing.clip"
+     onclick="self:toggleHealingMenu()" /> 
+
+            <img src="/modules/sabor_helper/images/support_button.png"
+                 *image-clip="self.support.clip"
+                 onclick="self:toggleSupportMenu()" />
+
+            <img src="/modules/sabor_helper/images/combat_button.png"
+                 *image-clip="self.combat.clip"
+                 onclick="self:toggleCombatMenu()" />
+
+            <img src="/modules/sabor_helper/images/cave_bot_button.png"
+                 *image-clip="self.cave.clip"
+                 onclick="self:toggleCaveBotMenu()" />
+          </div>
+
+        <!-- BOX INTERNA -->
+        <!-- CONTEÚDO -->
+
+<div class="config-box">
+
+<div *if="self.currentTab == 'healing'">
+
+  <div class="config-header">
+    <span>Select your potions and spells healing, and % for use</span>
+  </div>
+
+  <div class="toggle-btn"
+       style="image-source: /modules/sabor_helper/images/on-off.png;"
+       *image-clip="self.healingToggle.clip"
+       onclick="self:toggleHealing()" />
+</div>
+
+<div class="healing-container">
+<!-- HEALING SLOT 1 -->
+<div class="healing-box">
+  <div class="healing-row">
+  
+  <TextEdit id="healingPotionName1" class="healing-potion-name" text="None" focusable="false" />
+
+<!-- BOTÃO ESQUERDA -->
+<div class="healing-arrow"
+     style="image-source: /modules/sabor_helper/images/arrow_left.png;"
+     *image-clip="self.arrowLeft.clip"
+     onMousePress="self:startPrevPotion(1)"
+     onMouseRelease="self:stopScroll(1)"
+     onclick="self:stopScroll(1)">
+</div>
+
+<!-- SLOT -->
+<div class="healing-slot">
+  <div id="healingSlotBg1" class="healing-slot-empty"></div>
+
+  <UIItem id="healingPotionSlot1"
+          width="32"
+          height="32" />
+</div>
+
+<!-- BOTÃO DIREITA -->
+<div class="healing-arrow"
+     style="image-source: /modules/sabor_helper/images/arrow_right.png;"
+     *image-clip="self.arrowRight.clip"
+     onMousePress="self:startNextPotion(1)"
+     onMouseRelease="self:stopScroll(1)"
+     onclick="self:stopScroll(1)">
+</div>
+	 
+  <!-- LEFT -->
+  
+  <div class="percent-arrow-left"
+       style="image-source: /modules/sabor_helper/images/arrow_left.png;"
+       *image-clip="self.arrowpercentLeft.clip"
+       onMousePress="self:startPrevpercent(1)"
+       onMouseRelease="self:stoppercentScroll(1)"
+	   onclick="self:stoppercentScroll(1)"/>
+
+  <!-- VALUE -->
+<Label id="healingPercentLabel1" class="healing-percent" text="0%" />
+
+  <!-- RIGHT -->
+  <div class="percent-arrow-right"
+       style="image-source: /modules/sabor_helper/images/arrow_right.png;"
+       *image-clip="self.arrowpercentRight.clip"
+       onMousePress="self:startNextpercent(1)"
+       onMouseRelease="self:stoppercentScroll(1)"
+	   onclick="self:stoppercentScroll(1)"/>
+</div>	 
+	 
+  </div>
+<!-- END HEALING SLOT 1 -->
+
+<!-- HEALING SLOT 2 -->
+<div class="healing-box">
+  <div class="healing-row">
+  
+  <TextEdit id="healingPotionName2" class="healing-potion-name" text="None" focusable="false" />
+
+<!-- BOTÃO ESQUERDA -->
+<div class="healing-arrow"
+     style="image-source: /modules/sabor_helper/images/arrow_left.png;"
+     *image-clip="self.arrowLeft.clip"
+     onMousePress="self:startPrevPotion(2)"
+     onMouseRelease="self:stopScroll(2)"
+     onclick="self:stopScroll(2)">
+</div>
+
+<!-- SLOT -->
+<div class="healing-slot">
+  <div id="healingSlotBg2" class="healing-slot-empty"></div>
+
+  <UIItem id="healingPotionSlot2"
+          width="32"
+          height="32" />
+</div>
+
+<!-- BOTÃO DIREITA -->
+<div class="healing-arrow"
+     style="image-source: /modules/sabor_helper/images/arrow_right.png;"
+     *image-clip="self.arrowRight.clip"
+     onMousePress="self:startNextPotion(2)"
+     onMouseRelease="self:stopScroll(2)"
+     onclick="self:stopScroll(2)">
+</div>
+	 
+  <!-- LEFT -->
+  
+  <div class="percent-arrow-left"
+       style="image-source: /modules/sabor_helper/images/arrow_left.png;"
+       *image-clip="self.arrowpercentLeft.clip"
+       onMousePress="self:startPrevpercent(2)"
+       onMouseRelease="self:stoppercentScroll(2)"
+	   onclick="self:stoppercentScroll(2)"/>
+
+  <!-- VALUE -->
+<Label id="healingPercentLabel2" class="healing-percent" text="0%" />
+
+  <!-- RIGHT -->
+  <div class="percent-arrow-right"
+       style="image-source: /modules/sabor_helper/images/arrow_right.png;"
+       *image-clip="self.arrowpercentRight.clip"
+       onMousePress="self:startNextpercent(2)"
+       onMouseRelease="self:stoppercentScroll(2)"
+	   onclick="self:stoppercentScroll(2)"/>
+</div>	 
+	 
+  </div>
+<!-- END HEALING SLOT 2 -->
+
+</div>
+
+</div>
+
+<div *if="self.currentTab == 'support'">
+  <div class="config-header">
+    <span>Support Config</span>
+  </div>
+</div>
+
+<div *if="self.currentTab == 'combat'">
+  <div class="config-header">
+    <span>Combat Config</span>
+  </div>
+</div>
+
+<div *if="self.currentTab == 'cave'">
+  <div class="config-header">
+    <span>Cave Bot Config</span>
+  </div>
+</div>
+
+</div>
+
+        <!-- CLOSE -->
+		<button class="close-button" 
+		onclick="self:hide()"
+		>Close</button>
+
+    </window>
+
+</html>
