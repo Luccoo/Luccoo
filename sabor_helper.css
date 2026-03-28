@@ -1,0 +1,157 @@
+.helper-window {
+  position: relative;
+  width: 470px;
+  height: 405px;
+}
+
+.logo-header {
+  position: absolute;
+  top: -100%;
+  right: 110%;
+  width: 280px;
+  height: 150px;
+  --image-source: "/modules/sabor_helper/images/topbox";
+}
+
+/* BOX INTERNA */
+.config-header {
+  --image-source: "/modules/sabor_helper/images/header";
+  width: 432px;
+  height: 18px;
+  --image-size: 432 18;
+  text-align: center;
+  align-items: center;
+  --image-border: 2;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 45px;
+  top: 20px;
+  width: 30px;
+  height: 15px;
+}
+
+.healing-container {
+  display: flex;
+  flex-direction: line;
+  gap: 10px;
+}
+
+.config-box {
+  position: relative;	
+  --image-size: 432 350;
+  --image-source: "/modules/sabor_helper/images/config-box";
+  text-align: center;
+  --image-border: 2;
+  margin-left:20px;
+}
+
+/* BOX HEALING */
+
+.healing-box {
+  position: relative;	
+  --image-size: 159 80;
+  --image-source: "/modules/sabor_helper/images/config-box";
+  text-align: center;
+  --image-border: 2;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.healing-row {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  margin-top: 25px;
+}
+
+.healing-slot {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+.healing-slot-empty,
+.healing-slot-active {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+}
+
+.healing-potion-name {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 147px;
+  height: 12px;
+  text-align: center;
+  color: #c0c0c0;
+  font-size: 8;
+}
+
+.healing-arrow {
+  width: 10px;
+  height: 37px;
+  margin: 0 2px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 3px;
+}
+
+.tabs img {
+  width: 108px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* CONTEÚDO */
+.content {
+  padding: 6px;
+  color: #c0c0c0;
+}
+
+/* PORCENTAGEM */
+
+.healing-percent {	
+  --image-source: "/modules/sabor_helper/images/config-box";
+  --image-size: 40 25;
+  --image-border: 2; 
+  width: 40px;
+  height: 25px;
+  margin: 0 2px;
+}
+
+.percent-arrow-left {
+  width: 10px;
+  height: 25px;
+  margin: 0 2px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.percent-arrow-right {
+  width: 10px;
+  height: 25px;
+  margin: 0 0px;
+  margin-bottom: 2px;
+}
+
+/* BOTÃO FECHAR */
+.close-button {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  padding: 3px 10px !important;
+  min-width: 60px;
+  min-height: 20px;
+}
+
+.close-button:pressed {
+  padding: 3px 10px !important;
+}
